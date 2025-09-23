@@ -54,7 +54,7 @@ pnpm run run src/topics/00-introduction/index.ts
 
 If you haven't already, come say hi on my YouTube channel! That's where all the video magic happens.
 
-**[Your YouTube Channel Name](https://www.youtube.com/)**
+**[Adding soon](https://www.youtube.com/)**
 
 ## License
 
