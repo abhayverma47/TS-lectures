@@ -45,3 +45,27 @@ type WrapInArray<T> = T[];
 
 type StringArray = WrapInArray<string>;
 type NumberArray = WrapInArray<number>;
+
+/****** Video 3 - Higher Order Type (Real World Example) *******/
+
+// Without Higher Order Type (repetitive non DRY)
+interface ButtonProps {
+  text: string;
+  onClick: () => void;
+}
+
+interface OptionalButtonProps {
+  text?: string;
+  onClick?: () => void;
+}
+interface ReadonlyButtonProps {
+  readonly text: string;
+  readonly onClick: () => void;
+}
+
+// With Higher Order Type (crazy stuff!)
+type MakeOptional<T> = { [K in keyof T]?: T[K] };
+type MakeReadonly<T> = { readonly [K in keyof T]: T[K] };
+
+type OptionalButton = MakeOptional<ButtonProps>; //
+type ReadonlyButton = MakeReadonly<ButtonProps>; //
