@@ -69,3 +69,35 @@ type MakeReadonly<T> = { readonly [K in keyof T]: T[K] };
 
 type OptionalButton = MakeOptional<ButtonProps>; //
 type ReadonlyButton = MakeReadonly<ButtonProps>; //
+
+/****** Video 4 - MetaProgramming With HOTs (Real World Example) *******/
+
+// Your API responses
+interface User {
+  id: number;
+  name: string;
+  email: string;
+}
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+}
+
+// Instead of manually writing:
+
+// interface UserResponse
+// { data: User; loading: boolean; error: string | null }
+
+// interface ProductResponse
+// { data: Product; loading: boolean; error: string | null }
+
+// Let types write types for you!
+type ApiResponse<T> = {
+  data: T;
+  loading: boolean;
+  error: string | null;
+};
+
+type UserResponse = ApiResponse<User>; // Generated automatically!
+type ProductResponse = ApiResponse<Product>; // Generated automatically!
