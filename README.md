@@ -54,7 +54,7 @@ pnpm run run src/topics/00-introduction/index.ts
 
 If you haven't already, come say hi on my YouTube channel! That's where all the video magic happens.
 
-**[Adding soon](https://www.youtube.com/)**
+**[Abhays Syntax Studio](https://youtube.com/@abhayssyntaxstudio)**
 
 ## License
 
