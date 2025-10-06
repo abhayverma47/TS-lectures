@@ -1,0 +1,105 @@
+{
+  "$schema": "https://demotime.show/demo-time.schema.json",
+  "title": "HOTs under 60s",
+  "description": "Higher Order Types under 60 seconds",
+  "version": 2,
+  "demos": [
+    {
+      "id": "demo-mgfe5si6-8hzv",
+      "title": "Initial Phase",
+      "steps": [],
+      "description": "Initialization"
+    },
+    {
+      "id": "demo-mgfbsekc-f0dq",
+      "title": "Highlight Validator",
+      "steps": [
+        {
+          "action": "highlight",
+          "position": "110,type:110,null;",
+          "highlightWholeLine": true,
+          "path": "src/topics/01-generics/index.ts",
+          "zoom": 0
+        }
+      ],
+      "description": "Initial highlight of validator type",
+      "notes": {
+        "path": ".demo/notes/demo-mgfbsekc-f0dq_notes.md"
+      }
+    },
+    {
+      "id": "demo-mgfc7y58-suux",
+      "title": "Highlight FormValidator",
+      "steps": [
+        {
+          "action": "unselect"
+        },
+        {
+          "action": "highlight",
+          "path": "src/topics/01-generics/index.ts",
+          "position": "112,type:116,;",
+          "highlightWholeLine": true
+        }
+      ],
+      "description": "Proper understanding is required so we highlight this type too"
+    },
+    {
+      "id": "demo-mgfch0v1-6qz0",
+      "title": "Highlight FormState",
+      "steps": [
+        {
+          "action": "unselect"
+        },
+        {
+          "action": "highlight",
+          "path": "src/topics/01-generics/index.ts",
+          "position": "118,type:120,;",
+          "highlightWholeLine": true
+        }
+      ],
+      "description": "Mapped type form state has to be highlighted"
+    },
+    {
+      "id": "demo-mgfcm7o2-5sav",
+      "title": "Usage Code",
+      "steps": [
+        {
+          "action": "insert",
+          "content": "// Usage\ninterface LoginForm {\n  email: string;\n  password: string;\n}\ntype LoginFormState = FormState<LoginForm>;",
+          "path": "src/topics/01-generics/index.ts",
+          "position": "122",
+          "highlightWholeLine": true,
+          "insertTypingMode": "line-by-line",
+          "insertTypingSpeed": 100
+        }
+      ],
+      "description": "Code where we understand the usage of the types above"
+    },
+    {
+      "id": "demo-mgfcops6-n3cr",
+      "title": "Result output",
+      "steps": [
+        {
+          "action": "insert",
+          "path": "src/topics/01-generics/index.ts",
+          "content": "\n// Result: { email: FormField<string>; password: FormField<string> }",
+          "position": "128",
+          "highlightWholeLine": true,
+          "insertTypingMode": "line-by-line",
+          "insertTypingSpeed": 200
+        },
+        {
+          "action": "waitForTimeout",
+          "timeout": 1000
+        },
+        {
+          "action": "highlight",
+          "position": "129,//:129,}",
+          "highlightWholeLine": true,
+          "path": "src/topics/01-generics/index.ts"
+        }
+      ],
+      "description": "Example output comment for a better visualization"
+    }
+  ]
+}

@@ -101,3 +101,27 @@ type ApiResponse<T> = {
 
 type UserResponse = ApiResponse<User>; // Generated automatically!
 type ProductResponse = ApiResponse<Product>; // Generated automatically!
+
+/****** Video 5 - HOTs in 60 secs (Real World Example) *******/
+
+// Some form validation Higher Order Type
+type Validator<T> = (value: T) => string | null;
+
+type FormField<T> = {
+  value: T;
+  validate: Validator<T>;
+  error?: string;
+};
+
+type FormState<T> = {
+  [K in keyof T]: FormField<T[K]>;
+};
+
+// Usage
+interface LoginForm {
+  email: string;
+  password: string;
+}
+type LoginFormState = FormState<LoginForm>;
+
+// Result: { email: FormField<string>; password: FormField<string> }
