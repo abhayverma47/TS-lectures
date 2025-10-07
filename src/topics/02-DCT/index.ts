@@ -13,3 +13,24 @@ type Test3 = IsString<string | number>;
 // Actual: "YES" | "NO"
 
 // This is DISTRIBUTION in action!
+
+/****** Video 2 - Magic Of DCTs *******/
+
+// Form validation for different input types
+type Validate<T> = T extends string
+  ? { type: "text"; value: T; minLength: number }
+  : T extends number
+  ? { type: "number"; value: T; min: number; max: number }
+  : { type: "unknown"; value: T };
+
+// Here is our magic!
+type InputValidation = Validate<string | number>;
+// Result:
+// { type: "text"; value: string; minLength: number } |
+// { type: "number"; value: number; min: number; max: number }
+
+// Step-by-step what TypeScript does:
+// 1. Takes string | number
+// 2. Applies Validate<string>  -> first result
+// 3. Applies Validate<number> -> second result
+// 4. Unions the results -> final type
