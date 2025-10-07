@@ -10,5 +10,8 @@ pnpm-debug.log*
 # Misc
 .DS_Store
 
+# Demo
+/.demo
+
 # Editor
 /.vscode
